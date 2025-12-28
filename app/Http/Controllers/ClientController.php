@@ -23,7 +23,7 @@ class ClientController extends Controller
             ->with('client')
             ->get();
 
-        return view('clients.index', [
+        return view('Clients.index', [
             'pendingProjects' => $pendingProjects,
             'acceptedProjects' => $acceptedProjects,
         ]);

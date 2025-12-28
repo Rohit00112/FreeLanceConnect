@@ -16,12 +16,12 @@ class UserController extends Controller
         // Fetch users from the database
         $users = User::query()->orderBy('id', 'desc')->paginate(15); // or any other logic you need
 
-        return view('admin.users.index', compact('users'));
+        return view('Admin.Users.index', compact('users'));
     }
 
      public function create()
      {
-          return view('admin.users.create');
+          return view('Admin.Users.create');
      }
 
      public function store(Request $request)
@@ -47,7 +47,7 @@ class UserController extends Controller
          if($user->isAdmin()){
               return redirect()->back()->with('toast.error', 'Unauthorized');
          }
-        return view('admin.users.edit', compact('user'));
+        return view('Admin.Users.edit', compact('user'));
     }
 
     // Update user details

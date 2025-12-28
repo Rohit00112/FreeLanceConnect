@@ -12,12 +12,12 @@ class TeamMemberController extends Controller
     public function index()
     {
         $teamMembers = TeamMember::all();
-        return view('admin.team.index', compact('teamMembers'));
+        return view('Admin.team.index', compact('teamMembers'));
     }
 
     public function create()
     {
-        return view('admin.team.create');
+        return view('Admin.team.create');
     }
 
     public function store(Request $request)
@@ -54,7 +54,7 @@ class TeamMemberController extends Controller
 
     public function edit(TeamMember $team)
     {
-        return view('admin.team.edit', compact('team'));
+        return view('Admin.team.edit', compact('team'));
     }
 
     public function update(Request $request, TeamMember $team)

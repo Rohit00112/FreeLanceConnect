@@ -17,6 +17,6 @@ class ClientFreelancerProfileController extends Controller
             ->firstOrFail();
 
         $allReviews = Rating::query()->with('client')->where('freelancer_id', $id)->where('rating', '>=', 4)->get();
-        return view('clientFreelancer.profile', compact('freelancer', 'allReviews'));
+        return view('ClientFreelancer.profile', compact('freelancer', 'allReviews'));
     }
 }

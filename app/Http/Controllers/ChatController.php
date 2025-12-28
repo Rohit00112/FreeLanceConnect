@@ -33,7 +33,7 @@ class ChatController extends Controller
 
         $otherUser = User::query()->where('role', UserRole::FREELANCER)->where('id',$otherUserId)->firstOrFail();
 
-        return view('chat.index', compact('messages', 'otherUser'));
+        return view('Chat.index', compact('messages', 'otherUser'));
     }
 
     // Fetch messages via AJAX (if you want to poll for new messages)
@@ -186,6 +186,6 @@ class ChatController extends Controller
         $otherUser = User::where('id', $otherUserId)->firstOrFail();
     }
 
-    return view('chat.freelancer_chat', compact('messages', 'otherUser', 'clients'));
+    return view('Chat.freelancer_chat', compact('messages', 'otherUser', 'clients'));
 }
 }

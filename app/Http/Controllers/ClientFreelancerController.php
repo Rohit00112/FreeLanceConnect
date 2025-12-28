@@ -41,7 +41,7 @@ class ClientFreelancerController extends Controller
         // Recommendation logic
         $recommendedFreelancers = $this->getRecommendedFreelancers($request);
 
-        return view('clientFreelancer.index', compact('freelancers', 'recommendedFreelancers'));
+        return view('ClientFreelancer.index', compact('freelancers', 'recommendedFreelancers'));
     }
 
     /**

@@ -10,7 +10,7 @@ class AdminPaymentController extends Controller
     {
         $payments = Payment::query()->with(['client', 'freelancer', 'postProject'])->orderBy('id', 'desc')->paginate(15);
 
-        return view('admin.payments.index', compact('payments'));
+        return view('Admin.payments.index', compact('payments'));
     }
 
 }

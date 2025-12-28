@@ -13,7 +13,7 @@ class ClientProfileController extends Controller
     public function edit()
     {
         $client = Auth::user();
-        return view('clientDashboard.edit-profile', compact('client'));
+        return view('ClientDashboard.edit-profile', compact('client'));
     }
 
     // Handle the profile update request

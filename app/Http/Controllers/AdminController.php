@@ -24,6 +24,6 @@ class AdminController extends Controller
 
         $users = $query->paginate(10); // Adjust pagination as needed
 
-        return view('admin.dashboard', compact('clients', 'freelancers', 'payments', 'users'));
+        return view('Admin.dashboard', compact('clients', 'freelancers', 'payments', 'users'));
     }
 }

@@ -26,7 +26,7 @@ class MessageController extends Controller
             })
             ->get();
 
-        return view('messages.index', compact('messages'));
+        return view('Messages.index', compact('messages'));
     }
   function store(Request $request)
     {

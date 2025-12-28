@@ -15,12 +15,12 @@ class ProjectController extends Controller
     public function index()
     {
         $projects = Project::where('user_id', Auth::id())->get();
-        return view('projects.index', compact('projects'));
+        return view('Projects.index', compact('projects'));
     }
 
     public function create()
     {
-        return view('projects.create');
+        return view('Projects.create');
     }
 
     // Store a new project with multiple images
@@ -61,7 +61,7 @@ class ProjectController extends Controller
             ->with('images') // Load related images
             ->firstOrFail();
 
-        return view('projects.edit', compact('project'));
+        return view('Projects.edit', compact('project'));
     }
 
     // Update a project with multiple images
