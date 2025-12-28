@@ -1,0 +1,51 @@
+services:
+  - type: web
+    name: freelance-connect
+    env: docker
+    plan: starter
+    region: singapore # Optional: chose a region or let Render decide (defaults to Oregon usually)
+    envVars:
+      - key: APP_NAME
+        value: FreelanceConnect
+      - key: APP_ENV
+        value: production
+      - key: APP_KEY
+        generateValue: true
+      - key: APP_DEBUG
+        value: false
+      - key: APP_URL
+        sync: false # User must provide their Render URL here
+      
+      # Database Configuration (Aiven MySQL)
+      - key: DB_CONNECTION
+        value: mysql
+      - key: DB_HOST
+        value: mysql-3f79b418-subedirohit49-c22b.i.aivencloud.com
+      - key: DB_PORT
+        value: 12868
+      - key: DB_DATABASE
+        value: freelanceconnect
+      - key: DB_USERNAME
+        value: avnadmin
+      - key: DB_PASSWORD
+        sync: false
+
+      # Cache & Session & Queue
+      - key: BROADCAST_DRIVER
+        value: log
+      - key: CACHE_DRIVER
+        value: redis # or file/database. Dockerfile installs redis ext, so redis is good if available.
+        # If user doesn't have redis, they should switch to file/database
+      - key: SESSION_DRIVER
+        value: database # database requires table setup. file is safer for simple start.
+        # User has 'database' in .env.example. Let's stick to database but warn about migration.
+      - key: QUEUE_CONNECTION
+        value: database
+
+      # Redis Configuration (if needed)
+      - key: REDIS_HOST
+        value: redis # if they attach a redis service
+      
+      # Mail
+      - key: MAIL_MAILER
+        value: smtp
