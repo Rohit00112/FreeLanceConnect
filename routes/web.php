@@ -12,7 +12,7 @@ use App\Http\Controllers\NoteController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\ClientDashboardController;
 use App\Http\Controllers\ChatController;
-use App\Http\Controllers\clientfreelancerController;
+use App\Http\Controllers\ClientFreelancerController;
 use App\Http\Controllers\ClientFreelancerProfileController;
 use App\Http\Controllers\RatingController;
 use App\Http\Controllers\ClientProfileController;
@@ -83,10 +83,10 @@ Route::middleware('auth')->group(function () {
           Route::get('/projects/{id}/edit', [ProjectController::class, 'edit'])->name('projects.edit');
           Route::put('/projects/{project}', [ProjectController::class, 'update'])->name('projects.update');
 
-          Route::get('/clientprojects', [clientController::class, 'index'])->name('freelancer.projects');
-          Route::post('/clientprojects/{id}/accept', [clientController::class, 'accept'])->name('freelancer.projects.accept');
-          Route::post('/clientprojects/{id}/reject', [clientController::class, 'reject'])->name('freelancer.projects.reject');
-          Route::delete('/{id}', [clientController::class, 'delete'])->name('freelancer.projects.delete');
+          Route::get('/clientprojects', [ClientController::class, 'index'])->name('freelancer.projects');
+          Route::post('/clientprojects/{id}/accept', [ClientController::class, 'accept'])->name('freelancer.projects.accept');
+          Route::post('/clientprojects/{id}/reject', [ClientController::class, 'reject'])->name('freelancer.projects.reject');
+          Route::delete('/{id}', [ClientController::class, 'delete'])->name('freelancer.projects.delete');
           Route::get('/freelancer/todo', [TaskController::class, 'index'])->name('freelancer.todolist');
 
     // Add these routes for the CRUD operations
