@@ -2,7 +2,7 @@ services:
   - type: web
     name: freelance-connect
     env: docker
-    plan: starter
+    plan: free
     region: singapore # Optional: chose a region or let Render decide (defaults to Oregon usually)
     envVars:
       - key: APP_NAME
